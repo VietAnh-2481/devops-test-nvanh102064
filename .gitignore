@@ -1,0 +1,4 @@
+node_modules/
+dist/
+.vercel/
+tg_msg.txt

@@ -6,12 +6,12 @@ def tg(String msg) {
 pipeline {
   agent any
   environment {
-    TG_TOKEN   = credentials('tg-token')
-    TG_CHAT    = credentials('tg-chat')
-    PROJECT    = 'devops-test'
-    BRANCH     = 'main'
-    SITE_URL   = 'http://localhost:3000'
-    DEPLOY_DIR = 'E:\\DevOps\\deploy\\site'
+    TG_TOKEN      = credentials('tg-token')
+    TG_CHAT       = credentials('tg-chat')
+    VERCEL_TOKEN  = credentials('vercel-token')
+    PROJECT       = 'devops-test'
+    BRANCH        = 'main'
+    SITE_URL      = 'https://devops-test.vercel.app'
   }
   stages {
     stage('Notify start') {
@@ -26,8 +26,8 @@ pipeline {
     stage('Build') {
       steps { bat 'npm run build' }
     }
-    stage('Deploy') {
-      steps { bat 'xcopy dist %DEPLOY_DIR% /E /Y /I' }
+    stage('Deploy to Vercel') {
+      steps { bat 'call vercel deploy --prod --yes --token %VERCEL_TOKEN%' }
     }
   }
   post {
