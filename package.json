@@ -1,0 +1,8 @@
+{
+  "name": "devops-test",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build.js",
+    "start": "npx serve dist -l 3000"
+  }
+}
