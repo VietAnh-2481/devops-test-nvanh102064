@@ -5,13 +5,15 @@ def tg(String msg) {
 
 pipeline {
   agent any
-  environment {
-    TG_TOKEN      = credentials('tg-token')
-    TG_CHAT       = credentials('tg-chat')
-    VERCEL_TOKEN  = credentials('vercel-token')
-    PROJECT       = 'devops-test'
-    BRANCH        = 'main'
-    SITE_URL      = 'https://devops-test.vercel.app'
+    environment {
+    TG_TOKEN          = credentials('tg-token')
+    TG_CHAT           = credentials('tg-chat')
+    VERCEL_TOKEN      = credentials('vercel-token')
+    VERCEL_ORG_ID     = 'team_CK8Y6DHfaewOHLHAaXjJtSC4'
+    VERCEL_PROJECT_ID = 'prj_P2TdyMWijBAWbfUn3Eq6pfmkxHYU'
+    PROJECT           = 'devops-test-nvanh102064'
+    BRANCH            = 'main'
+    SITE_URL          = 'https://devops-nvanh102064.vercel.app'
   }
   stages {
     stage('Notify start') {
