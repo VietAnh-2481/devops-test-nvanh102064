@@ -13,7 +13,7 @@ pipeline {
     VERCEL_PROJECT_ID = 'prj_P2TdyMWijBAWbfUn3Eq6pfmkxHYU'
     PROJECT           = 'devops-test-nvanh102064'
     BRANCH            = 'main'
-    SITE_URL          = 'https://devops-nvanh102064.vercel.app'
+    SITE_URL          = 'https://devops-test-nvanh102064.vercel.app'
   }
   stages {
     stage('Notify start') {
